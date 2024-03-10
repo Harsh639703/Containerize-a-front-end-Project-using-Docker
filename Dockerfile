@@ -1,9 +1,8 @@
 #node Block for frontend
 
-FROM node:alpine3.19 as nodework
+FROM node:18-alpine
 WORKDIR /app
-COPY package.json .
-RUN npm install
 COPY . .
-RUN npm run build
+RUN yarn install --production
+CMD ["node", "src/index.js"]
 EXPOSE 3000
