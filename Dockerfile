@@ -1,6 +1,6 @@
 #node Block for frontend
 
-FROM node:alpine3.16 as nodework
+FROM node:alpine3.19 as nodework
 WORKDIR /app
 COPY package.json .
 RUN npm install
